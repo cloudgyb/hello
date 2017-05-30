@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="author" content="gyb" />
+		<title>坑爹小游戏-第一关</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style>
+			*{ margin: 0;padding: 0;}
+			.center{ margin: 0 auto;width: 500px;height: 100px;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="">
+				<p class="text-center text-success h3">智商测试：第一关</p>
+				<p id="t_span" class="text-center text-info h4">提示：依次点击 <span data="1">1</span> <span data="1">2</span> <span data="1">3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span> <span>9</span> <span>0</span>  </p>
+			</div>
+			
+		</div>
+		<br>
+		<div class="center" id="err_btn">
+				<button class="btn btn-default">一</button>
+				<button class="btn btn-success">二</button>
+				<button class="btn btn-danger">三</button>
+				<button class="btn btn-warning">四</button>
+				<button class="btn btn-info">五</button>
+				<button class="btn btn-warning">六</button>
+				<button class="btn btn-success">七</button>
+				<button class="btn btn-danger">八</button>
+				<button class="btn btn-info">九</button>
+				<button class="btn btn-danger">0</button>
+		</div>
+		<div class="center" id="menu" style="display: none;">
+			<div class="btn-group">
+				<button class="btn btn-default">再来一次</button>
+				<button class="btn btn-success">下一关 &gt;&gt;</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#err_btn button").click(function(){
+				alert("本关挑战失败！你智商真是让人捉急。。。");
+			});
+			var check = [0,0,0,0,0,0,0,0,0,0];
+			$("#t_span span").click(function(){
+				//alert($(this).index());
+				check[parseInt($(this).index())] = 1;
+				var i = parseInt(0);
+				for(i;i<parseInt(10);i++){
+					if(parseInt(check[i])==parseInt(0)){
+						break;
+					}continue;
+				}
+				if(i==parseInt(10)){
+					alert("竟然过关了，治丧还可以了！");
+					$("#menu").show();
+				}
+			});
+			
+		});
+	</script>
+</html>

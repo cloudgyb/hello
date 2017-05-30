@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="author" content="gyb" />
+		<title>坑爹小游戏</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script></script>
+		<style>
+			*margin{ padding:0;margin: 0;}
+			.init_l{position:relative;left: -1000px;}
+			.init_sbtn{position:relative;left: 2000px;}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="container">
+				<div id="zb_1" class="h2 text-info init_l">这是一场前所未有的游戏革命。。。</div>
+				<div id="zb_2" class="h1 text-danger init_l">这场游戏堪称历史上最坑爹的游戏。。。</div>	
+				<a href="game.html"><button id="go_game_btn" class="btn btn-success init_sbtn">START GAME &gt;&gt;</button></a>
+		</div>
+		<div class="hidden"><audio src="sound/5134.mp3"></audio></div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//alert("fdsf");
+			$("#zb_1").animate({position:"relative",left:"0px"},2000,function(){});
+			$("#zb_2").animate({position:"relative",left:"0px"},2000);
+			setInterval("$('#go_game_btn').animate({position:'relative',left:'0px'},2000);",0);
+			$("audio")[0].play();
+			$("#go_game.btn").click(function(){
+			});
+		});
+		
+	</script>
+</html>
